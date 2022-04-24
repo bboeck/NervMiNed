@@ -1,8 +1,8 @@
 "use strict";
 
-const CONFIG_KEY = "filterList";
+const CONFIG_KEY = "NervMiNedFilterList";
 const VERSION_KEY = "version";
-const VERSION = "2";
+const VERSION = "3";
 
 if (localStorage.getItem(CONFIG_KEY) == null || localStorage.getItem(VERSION_KEY) == null || localStorage.getItem(VERSION_KEY) != VERSION) {
     localStorage.setItem(CONFIG_KEY, JSON.stringify([{
@@ -32,6 +32,7 @@ if (localStorage.getItem(CONFIG_KEY) == null || localStorage.getItem(VERSION_KEY
         key: "kultur",
         keyStandard: "theme-kultur",
         keyORF: "kultur",
+		keyOOE: "content__container ressorts__outer ressortKultur",
         filter: false
     }, {
         name: "Leute",
@@ -47,6 +48,7 @@ if (localStorage.getItem(CONFIG_KEY) == null || localStorage.getItem(VERSION_KEY
         name: "Panorama",
         key: "panorama",
         keyStandard: "theme-panorama",
+		keyOOE: "content__container ressorts__outer ressortPanorama",
         filter: false
     }, {
         name: "Religion",
@@ -58,6 +60,7 @@ if (localStorage.getItem(CONFIG_KEY) == null || localStorage.getItem(VERSION_KEY
         key: "sport",
         keyStandard: "theme-sport",
         keyORF: "sport",
+		keyOOE: "content__container ressorts__outer ressortSport",
         filter: false
     }, {
         name: "Web",
@@ -69,6 +72,7 @@ if (localStorage.getItem(CONFIG_KEY) == null || localStorage.getItem(VERSION_KEY
         key: "wirtschaft",
         keyStandard: "theme-wirtschaft",
         keyORF: "wirtschaft",
+		keyOOE: "content__container ressorts__outer ressortWirtschaft",
         filter: false
     }]));
     localStorage.setItem(VERSION_KEY, VERSION);

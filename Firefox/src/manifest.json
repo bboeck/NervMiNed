@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     "name": "NervMiNed",
-    "version": "1.0",
+    "version": "1.1",
   
-    "description": "Browser Add-on welches uninteressante Themengebiete auf Nachrichtenseiten ausblendet. Im Moment werden die Seiten von ORF und Standard unterstützt.",
+    "description": "Browser Add-on welches uninteressante Themengebiete auf Nachrichtenseiten ausblendet. Im Moment werden die Seiten von ORF, OÖ Nachrichten und Standard unterstützt.",
   
     "icons": {
       "48": "icons/Logo-48.png"
@@ -23,7 +23,7 @@
   
     "content_scripts": [
       {
-        "matches": ["*://*.orf.at/*", "*://*.derstandard.at/*"],
+        "matches": ["*://*.orf.at/*", "*://*.derstandard.at/*", "*://*.nachrichten.at/*"],
         "js": ["cleanup.js"]
       }
     ]
