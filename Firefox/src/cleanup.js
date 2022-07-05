@@ -17,19 +17,26 @@ function removeContent(configuration) {
     cleanUpContent(configuration, "keyORF");
   } else if (url.hostname.search("derstandard.at") >= 0) {
     cleanUpContent(configuration, "keyStandard");
+    cleanUpStandardNewsletter();
   } else if (url.hostname.search("nachrichten.at") >= 0) {
     cleanUpContent(configuration, "keyOOE");
   }
 }
 
 function cleanUpContent(configuration, key) {
-  console.log(key);
   for (let topic of configuration) {
     if (topic.filter && key in topic) {
       const elements = document.body.getElementsByClassName(topic[key]);
       for (let i = elements.length - 1; i >= 0; i--) {
-		elements[i].parentElement.removeChild(elements[i]);
+		    elements[i].parentElement.removeChild(elements[i]);
       }
     }
+  }
+}
+
+function cleanUpStandardNewsletter() {
+  const elements = document.querySelectorAll('[data-section-type="newsletter"]');
+  for (let i = elements.length - 1; i >= 0; i--) {
+    elements[i].parentElement.removeChild(elements[i]);
   }
 }
